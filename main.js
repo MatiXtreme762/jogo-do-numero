@@ -17,6 +17,5 @@
 
     if (palpiteUsuario === numeroAleatorio) {
         ultimoResultado.textContent = "Parabens! Você Acertou!";
-        
-    }
+
     }
