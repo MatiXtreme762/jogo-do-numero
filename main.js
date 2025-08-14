@@ -1,21 +1,23 @@
 
-    const palpites = document.querySelector('.palpites');
-    const ultimoResultado = document.querySelector('.ultimoResultado');
-    const baixoOuAlto = document.querySelector('.baixoOuAlto');
-    const envioPalpite = document.querySelector('.envioPalpite');
-    const campoPalpite = document.querySelector('.campoPalpite');
+const palpites = document.querySelector('.palpites');
+const ultimoResultado = document.querySelector('.ultimoResultado');
+const baixoOuAlto = document.querySelector('.baixoOuAlto');
+const envioPalpite = document.querySelector('.envioPalpite');
+const campoPalpite = document.querySelector('.campoPalpite');
 
 
+                                            
+function verificarPalpite() {
+  const palpiteUsuario = Number(campoPalpite.value);
+  if (contagemPalpites === 1) {
+    palpites.textContent = "Palpites anteriores: ";
+  }
 
-    function verificarPalpite() {
-        const palpiteUsuario = Number(campoPalpite.value);
-        if (contagemPalpites === 1) {
-            palpites.textContent = "Papites anteriores: ";
-        }
-        
-    palpites.textContent += palpiteUsuario + " ";
+palpites.textContent += palpiteUsuario + " ";
 
-    if (palpiteUsuario === numeroAleatorio) {
-        ultimoResultado.textContent = "Parabens! Você Acertou!";
-
-    }
+if (palpiteUsuario === numeroAleatorio) {
+  ultimoResultado.textContent = "Parabéns! Você Acertou!";
+  ultimoResultado.style.backgroundColor = "green";
+  baixoOuAlto.textContent = "";
+  finalizarJogo();
+}
