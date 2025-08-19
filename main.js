@@ -21,11 +21,11 @@ if (palpiteUsuario === numeroAleatorio) {
   baixoOuAlto.textContent = "";
   finalizarJogo();
 } else if (contagemPalpites === 10) {
-  ultimoResultado.textcontent = "FIM DE JOGO!!";
+  ultimoResultado.textcontent = "PERDEU ACÉFALO!!";
   baixoOuAlto.textcontent = "";
   finalizarJogo();
 } else {
-  ultimoResultado.textContent = "ERROU ACÉFALO";
+  ultimoResultado.textContent = "Errado";
   ultimoResultado.style.backgroundColor = "red";
   if (palpiteUsuario < numeroAleatorio) {
     baixoOuAlto.textContent = "O último palpite foi muito baixo";
