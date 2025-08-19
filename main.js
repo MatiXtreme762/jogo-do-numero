@@ -25,7 +25,7 @@ if (palpiteUsuario === numeroAleatorio) {
   baixoOuAlto.textcontent = "";
   finalizarJogo();
 } else {
-  ultimoResultado.textContent = "Errado";
+  ultimoResultado.textContent = "ERROU ACÉFALO";
   ultimoResultado.style.backgroundColor = "red";
   if (palpiteUsuario < numeroAleatorio) {
     baixoOuAlto.textContent = "O último palpite foi muito baixo";
