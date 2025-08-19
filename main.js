@@ -57,5 +57,13 @@ function reiniciarJogo() {
   const paragrafosReiniciar = document.querySelectorAll('.paragrafosResultado p')
   for (const paragrafoReiniciar of paragrafosReiniciar) {
     paragrafoReiniciar.textcontent = "";
-  }
+}
+
+  botaoReiniciar.parentNode.removeChild(botaoReiniciar);
+  campoPalpite.disabled = false;
+  envioPalpite.disabled = false
+  campoPalpite.value = "";
+  campoPalpite.focus();
+  ultimoResultado.style.backgroundColor = 'white';
+  numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 }
