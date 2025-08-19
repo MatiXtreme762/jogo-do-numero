@@ -1,4 +1,4 @@
-let numeroAleatorio = Math.florr(Math.random() *100) + 1;
+let numeroAleatorio = Math.floor(Math.random() *100) + 1;
 const palpites = document.querySelector('.palpites');
 const ultimoResultado = document.querySelector('.ultimoResultado');
 const baixoOuAlto = document.querySelector('.baixoOuAlto');
@@ -6,7 +6,7 @@ const envioPalpite = document.querySelector('.envioPalpite');
 const campoPalpite = document.querySelector('.campoPalpite');
 let contagemPalpites = 1;
 let botaoReiniciar;
-                                  
+                                            
 function verificarPalpite() {
   const palpiteUsuario = Number(campoPalpite.value);
   if (contagemPalpites === 1) {
@@ -21,7 +21,7 @@ if (palpiteUsuario === numeroAleatorio) {
   baixoOuAlto.textContent = "";
   finalizarJogo();
 } else if (contagemPalpites === 10) {
-  ultimoResultado.textcontent = "PERDEU ACÉFALO!!";
+  ultimoResultado.textcontent = "FIM DE JOGO!!";
   baixoOuAlto.textcontent = "";
   finalizarJogo();
 } else {
@@ -42,7 +42,7 @@ campoPalpite.focus();
 envioPalpite.addEventListener('click', verificarPalpite);
 
 function finalizarJogo() {
-  caompoPalpite.disabled = true;
+  campoPalpite.disabled = true;
   envioPalpite.disabled = true;
   botaoReiniciar = document.createElement('button');
   document.body.appendChild(botaoReiniciar);
@@ -50,20 +50,20 @@ function finalizarJogo() {
   botaoReiniciar.classList.add('botaoReiniciar');
   document.body.appendChild(botaoReiniciar);
   botaoReiniciar.addEventListener('click', reiniciarJogo);
-    }
+}
 
 function reiniciarJogo() {
   contagemPalpites = 1;
-  const paragrafosReiniciar = document.querySelectorAll('.paragrafosResultado p')
+  const paragrafosReiniciar = document.querySelectorAll('.paragrafosResultado p');
   for (const paragrafoReiniciar of paragrafosReiniciar) {
     paragrafoReiniciar.textcontent = "";
 }
 
   botaoReiniciar.parentNode.removeChild(botaoReiniciar);
   campoPalpite.disabled = false;
-  envioPalpite.disabled = false
+  envioPalpite.disabled = false;
   campoPalpite.value = "";
   campoPalpite.focus();
   ultimoResultado.style.backgroundColor = 'white';
   numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-}
+} 
