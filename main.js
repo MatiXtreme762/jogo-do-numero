@@ -21,7 +21,7 @@ if (palpiteUsuario === numeroAleatorio) {
   baixoOuAlto.textContent = "";
   finalizarJogo();
 } else if (contagemPalpites === 10) {
-  ultimoResultado.textContent = 'Fim de jogo! O numero era ' = numeroAleatorio;
+  ultimoResultado.textContent = 'Fim de jogo! O numero era ' + numeroAleatorio;
   baixoOuAlto.textContent = "";
   finalizarJogo();
 } else {
@@ -53,16 +53,15 @@ function finalizarJogo() {
 
 function reiniciarJogo() {
   contagemPalpites = 1;
-  const paragrafosReiniciar = document.querySelectorAll('.paragrafosResultados p');
-  for (const paragrafoReiniciar of paragrafosReiniciar) {
-    paragrafoReiniciar.textContent = "";
-}
-
+  palpites.textContent = '';
+  ultimoResultado.textContent = '';
+  baixoOuAlto.textContent = '';
+  
   botaoReiniciar.parentNode.removeChild(botaoReiniciar);
   campoPalpite.disabled = false;
   envioPalpite.disabled = false;
-  campoPalpite.value = "";
+  campoPalpite.value = '';
   campoPalpite.focus();
   ultimoResultado.style.backgroundColor = 'white';
   numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-} 
+}
