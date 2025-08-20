@@ -21,7 +21,7 @@ if (palpiteUsuario === numeroAleatorio) {
   baixoOuAlto.textContent = "";
   finalizarJogo();
 } else if (contagemPalpites === 10) {
-  ultimoResultado.textContent = "PERDEU ACÉFALO!!";
+  ultimoResultado.textContent = 'Fim de jogo! O numero era ' = numeroAleatorio;
   baixoOuAlto.textContent = "";
   finalizarJogo();
 } else {
@@ -55,7 +55,7 @@ function reiniciarJogo() {
   contagemPalpites = 1;
   const paragrafosReiniciar = document.querySelectorAll('.paragrafosResultados p');
   for (const paragrafoReiniciar of paragrafosReiniciar) {
-    paragrafoReiniciar.textcontent = "";
+    paragrafoReiniciar.textContent = "";
 }
 
   botaoReiniciar.parentNode.removeChild(botaoReiniciar);
